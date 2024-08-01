@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Youtube Playback Speed Controller",
+  "description": "Adjust Youtube Playback Speed with keyboard and mouse",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
