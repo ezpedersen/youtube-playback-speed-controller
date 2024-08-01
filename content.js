@@ -22,7 +22,19 @@ document.addEventListener("wheel", (event) => {
         video.playbackRate -= step; // Scroll down to decrease speed
       }
       chrome.action.setBadgeText({ text: video.playbackRate });
-      console.log(`Playback speed: ${video.playbackRate}`);
+    }
+  }
+});
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  const command = request.command;
+  if (command.startsWith("speed")) {
+    const video = document.querySelector("video");
+    if (video) {
+      video.playbackRate = parseInt(command.slice(-1));
+      chrome.runtime.sendMessage({
+        playbackRate: video.playbackRate.toFixed(1),
+      });
     }
   }
 });

@@ -13,5 +13,28 @@
       "matches": ["*://www.youtube.com/*"],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "speed1": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+1"
+      },
+      "description": "Reset playback speed to 1"
+    },
+    "speed2": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+2"
+      },
+      "description": "Reset playback speed to 2"
+    },
+    "speed3": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+3"
+      },
+      "description": "Reset playback speed to 3"
+    }
+  }
 }
